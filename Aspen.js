@@ -132,17 +132,26 @@ function image(source, width, height, align){
     return container
 }
 
-function nav(arr){
+function nav(arr, align, color, radius, width, height){
     var nav = document.createElement("div");
-    nav.style.width = "100vw";
-    nav.style.height = "40px";
-    nav.style.background = "black";
+    nav.style.width = width;
+    nav.style.height = height;
+    nav.style.background = color;
+    nac.style.borderRadius = radius;
     nav.style.opacity = 0.7;
     nav.style.position = "fixed";
     nav.style.top = "0";
     nav.style.lineHeight = "40px";
     nav.style.zIndex = "1000";
-
+    if(align == "center"){
+        image.classList.add("center");
+    }
+    if(align == "left"){
+        image.classList.add("left");
+    }
+    if(align == "right"){
+        image.classList.add("right");
+    }
     for(var i = 0; i < arr.length; i++){
         var link = document.createElement("a");
         link.textContent = arr[i];
