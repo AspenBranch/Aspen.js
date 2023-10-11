@@ -17,13 +17,14 @@ function fontFamily(family){
     return document.createElement("div");
 }
 
-function headImage(source, title, subtitle){
+function headImage(source, title, subtitle, width, height){
     var hi = document.createElement("div");
     hi.style.position="relative";
 
     var image = document.createElement("img");
     image.src=source;
-    image.height="600";
+    image.style.height= height;
+    image.style.width = width;
     document.body.appendChild(image);
 
     hi.appendChild(image);
